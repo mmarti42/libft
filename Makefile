@@ -26,7 +26,7 @@ CFILE = ft_memalloc.c ft_strcat.c ft_strncmp.c ft_memccpy.c ft_strchr.c ft_strnc
     ft_lstdelone.c ft_putnbr_fd.c ft_strmap.c ft_toupper.c \
     ft_lstiter.c ft_putstr.c ft_strmapi.c \
     ft_lstmap.c ft_putstr_fd.c ft_strncat.c \
-    ft_lstnew.c ft_skip_whitespaces.c ft_strnchr.c
+    ft_lstnew.c ft_strnchr.c
 
 OFILE = ft_memalloc.o ft_strcat.o ft_strncmp.o ft_memccpy.o ft_strchr.o ft_strncpy.o \
     ft_atoi.o ft_memchr.o ft_strclr.o ft_strnequ.o ft_bzero.o ft_memcmp.o ft_strcmp.o ft_strnew.o \
@@ -42,7 +42,7 @@ OFILE = ft_memalloc.o ft_strcat.o ft_strncmp.o ft_memccpy.o ft_strchr.o ft_strnc
     ft_lstdelone.o ft_putnbr_fd.o ft_strmap.o ft_toupper.o \
     ft_lstiter.o ft_putstr.o ft_strmapi.o \
     ft_lstmap.o ft_putstr_fd.o ft_strncat.o \
-    ft_lstnew.o ft_skip_whitespaces.o ft_strnchr.o
+    ft_lstnew.o ft_strnchr.o
 
 HFILE = libft.h
 
