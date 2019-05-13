@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_atoi(const char *str)
 {
 	long int	digit;
@@ -24,6 +26,8 @@ int	ft_atoi(const char *str)
 		sign = (*str++ == '-' ? -1 : 1);
 	while (*str == '0')
 		str++;
+	if (ft_strlenbr(str) > 19)
+		return (sign == -1 ? 0 : -1);
 	if (*str > '9' && *str < '0')
 		return (0);
 	while (*str != '\0' && (*str >= '0' && *str <= '9'))

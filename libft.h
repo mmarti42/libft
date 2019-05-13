@@ -91,5 +91,10 @@ void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 char				**ft_strsplit(char *s, int c);
+size_t				ft_strlenbr(const char *s);
+int 				ft_pow2(int pow);
+char 				*ft_tobin(int num);
+char				*ft_strrev(char *s);
+int 				ft_maxlog2(int num);
 
 #endif

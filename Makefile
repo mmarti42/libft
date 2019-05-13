@@ -25,8 +25,8 @@ CFILE = ft_memalloc.c ft_strcat.c ft_strncmp.c ft_memccpy.c ft_strchr.c ft_strnc
     ft_lstdel.c ft_putnbr.c ft_strlen.c ft_tolower.c \
     ft_lstdelone.c ft_putnbr_fd.c ft_strmap.c ft_toupper.c \
     ft_lstiter.c ft_putstr.c ft_strmapi.c \
-    ft_lstmap.c ft_putstr_fd.c ft_strncat.c \
-    ft_lstnew.c ft_strnchr.c
+    ft_lstmap.c ft_putstr_fd.c ft_strncat.c ft_maxlog2.c\
+    ft_lstnew.c ft_strlenbr.c ft_strnchr.c ft_pow2.c ft_tobin.c
 
 OFILE = ft_memalloc.o ft_strcat.o ft_strncmp.o ft_memccpy.o ft_strchr.o ft_strncpy.o \
     ft_atoi.o ft_memchr.o ft_strclr.o ft_strnequ.o ft_bzero.o ft_memcmp.o ft_strcmp.o ft_strnew.o \
@@ -40,9 +40,9 @@ OFILE = ft_memalloc.o ft_strcat.o ft_strncmp.o ft_memccpy.o ft_strchr.o ft_strnc
     ft_lstadd.o ft_putendl_fd.o ft_strlcat.o ft_strtrim.o \
     ft_lstdel.o ft_putnbr.o ft_strlen.o ft_tolower.o \
     ft_lstdelone.o ft_putnbr_fd.o ft_strmap.o ft_toupper.o \
-    ft_lstiter.o ft_putstr.o ft_strmapi.o \
+    ft_lstiter.o ft_putstr.o ft_strmapi.o ft_maxlog2.o\
     ft_lstmap.o ft_putstr_fd.o ft_strncat.o \
-    ft_lstnew.o ft_strnchr.o
+    ft_lstnew.o ft_strlenbr.o ft_strnchr.o ft_pow2.o ft_tobin.o
 
 HFILE = libft.h
 
