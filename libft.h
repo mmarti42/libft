@@ -96,5 +96,6 @@ int 				ft_pow2(int pow);
 char 				*ft_tobin(int num);
 char				*ft_strrev(char *s);
 int 				ft_maxlog2(int num);
+int					ft_sqrt(int nb);
 
 #endif
