@@ -16,9 +16,5 @@ void	ft_putstr_fd(char const *s1, int fd)
 {
 	if (!s1 || fd < 0)
 		return ;
-	while (*s1 != '\0')
-	{
-		ft_putchar_fd(*s1, fd);
-		s1++;
-	}
+	write(fd, s1, ft_strlen(s1));
 }
