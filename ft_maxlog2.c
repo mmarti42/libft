@@ -6,13 +6,13 @@
 /*   By: mmarti <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/13 07:17:37 by mmarti            #+#    #+#             */
-/*   Updated: 2019/05/13 07:17:40 by mmarti           ###   ########.fr       */
+/*   Updated: 2019/05/16 16:03:46 by mmarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_maxlog2(int num)
+int	ft_maxlog2(int num)
 {
 	int res;
 

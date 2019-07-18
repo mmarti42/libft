@@ -18,10 +18,7 @@ void	*ft_memalloc(size_t size)
 {
 	void *c;
 
-	if (!size)
-		return (NULL);
-	c = (void *)malloc(size);
-	if (!c)
+	if(!(c = malloc(size)))
 		return (0);
 	ft_bzero(c, size);
 	return (c);

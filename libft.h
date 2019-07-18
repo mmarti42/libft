@@ -6,7 +6,7 @@
 /*   By: mmarti <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/11 17:41:30 by mmarti            #+#    #+#             */
-/*   Updated: 2019/04/11 17:41:37 by mmarti           ###   ########.fr       */
+/*   Updated: 2019/05/16 16:05:10 by mmarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,10 +92,10 @@ void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 char				**ft_strsplit(char *s, int c);
 size_t				ft_strlenbr(const char *s);
-int 				ft_pow2(int pow);
-char 				*ft_tobin(int num);
+int					ft_pow2(int pow);
+char				*ft_tobin(int num);
 char				*ft_strrev(char *s);
-int 				ft_maxlog2(int num);
+int					ft_maxlog2(int num);
 int					ft_sqrt(int nb);
 
 #endif
