@@ -18,5 +18,5 @@ void	ft_bzero(void *destination, size_t n)
 
 	dest = destination;
 	while (n--)
-		*dest++ = '\0';
+		*dest++ = 0;
 }

@@ -97,5 +97,6 @@ char				*ft_tobin(int num);
 char				*ft_strrev(char *s);
 int					ft_maxlog2(int num);
 int					ft_sqrt(int nb);
+size_t				ft_strwlen(char *s);
 
 #endif
