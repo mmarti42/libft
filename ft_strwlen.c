@@ -17,7 +17,7 @@ size_t ft_strwlen(char *s)
 	size_t count;
 
 	count = 0;
-	while (*s != ' ' || *s != '\t' || *s != '\n')
+	while (*s && *s != ' ' && *s != '\t' && *s != '\n')
 	{
 		s++;
 		count++;

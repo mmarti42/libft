@@ -98,5 +98,6 @@ char				*ft_strrev(char *s);
 int					ft_maxlog2(int num);
 int					ft_sqrt(int nb);
 size_t				ft_strwlen(char *s);
+char				*ft_insert(char *str, char *todel, char *toins);
 
 #endif
