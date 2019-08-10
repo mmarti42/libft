@@ -1,24 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strclen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmarti <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/09 16:09:52 by mmarti            #+#    #+#             */
-/*   Updated: 2019/04/09 16:09:54 by mmarti           ###   ########.fr       */
+/*   Created: 2019/08/10 22:12:35 by mmarti            #+#    #+#             */
+/*   Updated: 2019/08/10 22:12:36 by mmarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *str1, const char *str2)
-{
-	char *string;
+#include "libft.h"
 
-	string = str1;
-	while (*string != '\0')
-		string++;
-	while (str2 && *str2 != '\0')
-		*string++ = *str2++;
-	*string = '\0';
-	return (str1);
+size_t	ft_strclen(char *s, char c)
+{
+	size_t count;
+
+	count = 0;
+	if (!s)
+		return (count);
+	while (*s && *s != c)
+	{
+		s++;
+		count++;
+	}
+	return (count);
 }
