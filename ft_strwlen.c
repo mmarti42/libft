@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-size_t ft_strwlen(char *s)
+size_t	ft_strwlen(char *s)
 {
 	size_t count;
 

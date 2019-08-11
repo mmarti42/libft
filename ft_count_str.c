@@ -12,11 +12,13 @@
 
 #include "libft.h"
 
-size_t ft_count_str(char **tab)
+size_t	ft_count_str(char **tab)
 {
 	size_t count;
 
 	count = 0;
+	if (!tab)
+		return (0);
 	while (*tab)
 	{
 		tab++;

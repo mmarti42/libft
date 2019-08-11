@@ -28,7 +28,5 @@ char	*ft_insert(char *str, char *todel, char *toins)
 	ft_memcpy(&res[fpart], toins, len2);
 	ft_memcpy(&res[fpart + len2], &str[fpart + ft_strlen(todel)],
 			ft_strlen(&str[fpart + ft_strlen(todel)]));
-	//free(str);
-	//free(todel);
 	return (res);
 }
