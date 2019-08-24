@@ -1,16 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*   ft_strtok.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmarti <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/16 00:55:37 by mmarti            #+#    #+#             */
-/*   Updated: 2019/04/16 00:55:38 by mmarti           ###   ########.fr       */
+/*   Created: 2019/08/24 13:35:46 by mmarti            #+#    #+#             */
+/*   Updated: 2019/08/24 13:35:47 by mmarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
 
 static	char		**memfree(char **fr, int i)
@@ -25,28 +24,32 @@ static	char		**memfree(char **fr, int i)
 	return (fr);
 }
 
-static	int			ft_count_words(char *s, int c)
+static	int			ft_count_words(char *s)
 {
 	int count;
-	int i;
 
+	if (!*s)
+		return (0);
 	count = 0;
-	i = 0;
-	while (s[i] != 0)
+	while (*s)
 	{
-		if (s[i] != c && (s[i + 1] == c || s[i + 1] == 0))
+		if (*s != ' ' && *s != '\t' && *s != '\n')
+		{
 			count++;
-		i++;
+			while (*s && *s != ' ' && *s != '\t' && *s != '\n')
+				s++;
+		}
+		s++;
 	}
 	return (count);
 }
 
-static	size_t		ft_wordsize(char *s, int c)
+static	size_t		ft_wordsize(char *s)
 {
 	int count;
 
 	count = 0;
-	while (*s != c && *s != 0)
+	while (*s && *s != ' ' && *s != '\t' && *s != '\n')
 	{
 		s++;
 		count++;
@@ -54,26 +57,22 @@ static	size_t		ft_wordsize(char *s, int c)
 	return (count);
 }
 
-static	char		*ft_word(char *s, int c)
+static	char		*ft_word(char *s)
 {
 	char	*strnew;
 	int		i;
 	size_t	size;
 
 	i = 0;
-	size = ft_wordsize(s, c);
-	strnew = (char *)ft_memalloc(size + 1);
-	if (!strnew)
+	size = ft_wordsize(s);
+	if (!(strnew = (char *)ft_memalloc(size + 1)))
 		return (0);
-	while (size != 0)
-	{
+	while (size--)
 		strnew[i++] = *s++;
-		size--;
-	}
 	return (strnew);
 }
 
-char				**ft_strsplit(char *s, int c)
+char				**ft_strtok(char *s)
 {
 	char		**str;
 	size_t		words;
@@ -82,20 +81,19 @@ char				**ft_strsplit(char *s, int c)
 	if (!s)
 		return (0);
 	i = 0;
-	words = ft_count_words(s, c);
-	str = (char **)malloc((words + 1) * sizeof(char *));
-	if (!str)
+	words = ft_count_words(s);
+	if (!(str = (char **)malloc((words + 1) * sizeof(char *))))
 		return (0);
-	if (*s == 0)
+	if (words == 0)
 		return (str);
 	while (i < words)
 	{
-		while (*s == c)
+		while (*s == ' ' || *s == '\t' || *s == '\n')
 			s++;
-		str[i] = ft_word(s, c);
+		str[i] = ft_word(s);
 		if (!str[i++])
 			return (memfree(str, i));
-		s += ft_wordsize(s, c) + 1;
+		s += ft_wordsize(s) + 1;
 	}
 	str[words] = 0;
 	return (str);

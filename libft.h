@@ -101,5 +101,6 @@ size_t				ft_strwlen(char *s);
 char				*ft_insert(char *str, char *todel, char *toins);
 size_t				ft_count_str(char **tab);
 size_t				ft_strclen(char *s, char c);
+char				**ft_strtok(char *s);
 
 #endif
