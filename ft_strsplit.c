@@ -83,7 +83,7 @@ char				**ft_strsplit(char *s, int c)
 		return (0);
 	i = 0;
 	words = ft_count_words(s, c);
-	str = (char **)malloc((words + 1) * sizeof(char *));
+	str = (char **)ft_memalloc((words + 1) * sizeof(char *));
 	if (!str)
 		return (0);
 	if (*s == 0)
