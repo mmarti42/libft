@@ -82,7 +82,7 @@ char				**ft_strtok(char *s)
 		return (0);
 	i = 0;
 	words = ft_count_words(s);
-	if (!(str = (char **)malloc((words + 1) * sizeof(char *))))
+	if (!(str = (char **)ft_memalloc((words + 1) * sizeof(char *))))
 		return (0);
 	if (words == 0)
 		return (str);
