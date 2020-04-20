@@ -5,8 +5,11 @@ This project is about **re-write standard libc(and some additional) functions fo
 Improving skills:
 
 > Imperative programming
+
 > Rigor
+
 > Algorithms & AI
+
 string.h | strings.h | stdlib.h | ctype.h | stdio.h | additional
 :----------- | :-----------: | :-----------: | -----------: | -----------: | -----------:
 memset		| bzero	| atoi		| isalpha | putchar | ft_memalloc
@@ -39,5 +42,3 @@ strncmp		| 	| | | | ft_putchar_fd
 | | | | | | ft_lstmap
 | | | | | | ft_swap
 | | | | | | ft_strrev
-| | | | | | ft_lstlen
-| | | | | | ft_ffree
