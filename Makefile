@@ -27,7 +27,8 @@ CFILE = ft_memalloc.c ft_strcat.c ft_strncmp.c ft_memccpy.c ft_strchr.c ft_strnc
     ft_lstiter.c ft_putstr.c ft_strmapi.c ft_sqrt.c\
     ft_lstmap.c ft_putstr_fd.c ft_strncat.c ft_maxlog2.c\
     ft_lstnew.c ft_strlenbr.c ft_strnchr.c ft_pow2.c ft_tobin.c \
-    ft_strwlen.c ft_insert.c ft_count_str.c ft_strclen.c ft_strtok.c
+    ft_strwlen.c ft_insert.c ft_count_str.c ft_strclen.c ft_strtok.c \
+    get_next_line.c
 
 OFILE = ft_memalloc.o ft_strcat.o ft_strncmp.o ft_memccpy.o ft_strchr.o ft_strncpy.o \
     ft_atoi.o ft_memchr.o ft_strclr.o ft_strnequ.o ft_bzero.o ft_memcmp.o ft_strcmp.o ft_strnew.o \
@@ -44,9 +45,10 @@ OFILE = ft_memalloc.o ft_strcat.o ft_strncmp.o ft_memccpy.o ft_strchr.o ft_strnc
     ft_lstiter.o ft_putstr.o ft_strmapi.o ft_maxlog2.o\
     ft_lstmap.o ft_putstr_fd.o ft_strncat.o ft_sqrt.o\
     ft_lstnew.o ft_strlenbr.o ft_strnchr.o ft_pow2.o ft_tobin.o \
-    ft_strwlen.o ft_insert.o ft_count_str.o ft_strclen.o ft_strtok.o
+    ft_strwlen.o ft_insert.o ft_count_str.o ft_strclen.o ft_strtok.o \
+    get_next_line.o
 
-HFILE = libft.h
+HFILE = .
 
 all: $(NAME)
 
