@@ -19,7 +19,7 @@ int	ft_sqrt(int nb)
 		return (0);
 	n = 42;
 	counter = 0;
-	while (counter++ < 5)
+	while (counter++ < 20)
 	{
 		if (n * n == nb)
 			return (n);

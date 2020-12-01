@@ -16,12 +16,14 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
+# include <errno.h>
+# include <stdio.h>
 
 typedef	struct		s_list
 {
-	void			*content;
-	size_t			content_size;
+	void			*data;
 	struct s_list	*next;
+	struct s_list	*prev;
 }					t_list;
 
 void				ft_bzero(void *destination, size_t n);
@@ -102,5 +104,7 @@ char				*ft_insert(char *str, char *todel, char *toins);
 size_t				ft_count_str(char **tab);
 size_t				ft_strclen(char *s, char c);
 char				**ft_strtok(char *s);
+void				*ft_xmalloc(size_t size);
+char				*parse_opt(char **av, char const *opt_list);
 
 #endif
