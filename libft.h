@@ -13,11 +13,20 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# define DELDATA 1
+# define NDELDATA 0
+
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
 # include <errno.h>
 # include <stdio.h>
+
+typedef enum e_bool
+{
+	false,
+	true
+}			t_bool;
 
 typedef	struct		s_list
 {
@@ -46,10 +55,8 @@ char				*ft_strcat(char *str1, const char *str2);
 char				*ft_strchr(const char *str, int ch);
 int					ft_strcmp(char const *s1, char const *s2);
 char				*ft_strcpy(char *destination, const char *source);
-char				*ft_strdup(char *str);
-size_t				ft_strlcat(char *dst, const char *src, size_t size);
+char				*ft_strdup(const char *str);
 size_t				ft_strlen(const char *string);
-char				*ft_strncat(char *str1, const char *str2, size_t n);
 char				*ft_strnchr(const char *str, int ch, size_t n);
 int					ft_strncmp(char const *s1,
 		char const *s2, size_t n);
@@ -68,16 +75,8 @@ void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr_fd(int nb, int fd);
 void				ft_putendl(char const *s);
 void				*ft_memalloc(size_t size);
-void				ft_memdel(void **ap);
-char				*ft_strnew(size_t size);
-void				ft_strdel(char **as);
-void				ft_strclr(char *s);
-void				ft_striter(char *s, void (*f)(char *));
-int					ft_strequ(char const *s1, char const *s2);
 int					ft_strnequ(char const *s1, char const *s2, size_t n);
 size_t				ft_strnlen(char const *str, int n);
-void				ft_striteri(char *s, void (*f)(unsigned int, char *));
-char				*ft_strmap(char const *s, char (*f)(char));
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_skip_whitespaces(char const *s);
@@ -85,11 +84,6 @@ char				*ft_strtrim(char const *s);
 void				ft_putnbr(int nb);
 size_t				ft_dcount(int nb);
 char				*ft_itoa(int n);
-char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-t_list				*ft_lstnew(void const *content, size_t content_size);
-void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
-void				ft_lstadd(t_list **alst, t_list *new);
-void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 char				**ft_strsplit(char *s, int c);
@@ -106,5 +100,7 @@ size_t				ft_strclen(char *s, char c);
 char				**ft_strtok(char *s);
 void				*ft_xmalloc(size_t size);
 char				*parse_opt(char **av, char const *opt_list);
+t_list				*ft_lstins(t_list *first, void *data);
+void				ft_lstdel(t_list *l, char flag);
 
 #endif

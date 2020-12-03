@@ -65,7 +65,9 @@ SRC = ft_memalloc.c\
 	ft_strtok.c\
     get_next_line.c\
 	ft_xmalloc.c\
-	parse_opt.c 
+	parse_opt.c\
+	ft_lstins.c\
+	ft_lstdel.c
 
 OBJ = $(addprefix $(DIR_O)/,$(SRC:.c=.o))
 
