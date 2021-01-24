@@ -99,8 +99,9 @@ size_t				ft_count_str(char **tab);
 size_t				ft_strclen(char *s, char c);
 char				**ft_strtok(char *s);
 void				*ft_xmalloc(size_t size);
-char				*parse_opt(char **av, char const *opt_list);
+char				*parse_opt(char const **av, char const *opt_list, char *buf);
 t_list				*ft_lstins(t_list *first, void *data);
 void				ft_lstdel(t_list *l, char flag);
+char				*s_parse_opt(char const *av, char const *opt_list, char *buf);
 
 #endif

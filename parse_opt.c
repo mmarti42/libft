@@ -1,44 +1,48 @@
 #include "libft.h"
-#include <errno.h>
-#define DEFAULT_RETSTRING_SIZE 32
 
-static char *get_opt(char *p_str, char *ret_str, size_t *len, char const *opt_list)
+/*
+** buf должен быть не менее strlen(opt_list) + 1
+** При ошибке возвращает NULL
+** s_parse_opt принимает строку без '-', т.e. *(av + 1)!!
+*/
+
+static int get_opt(char const *av, char const *opt_list, char *buf)
 {
-	static size_t found_options;
-
-	if (*len == found_options - 1)
-	{
-		char *tmp = (char *)ft_xmalloc(*len = *len + *len / 2);
-        memcpy(tmp, ret_str, strlen(ret_str));
-        free(ret_str);
-        ret_str = tmp;
-	}
-	while (*p_str)
-	{
-		if (!strchr(opt_list, *p_str))
-			return NULL;
-		ret_str[found_options++] = *p_str++;
-	}
-	return ret_str;
+    while (*++av)
+    {
+        if (!ft_strchr(opt_list, *av))
+            return (-1);
+        if (!ft_strchr(buf, *av))
+            buf[ft_strlen(buf)] = *av;
+    }
+    return (0);
 }
 
-char	*parse_opt(char **av, char const *opt_list)
+char	*parse_opt(char const **av, char const *opt_list, char *buf)
 {
-    char *ret;
-	size_t ret_len = DEFAULT_RETSTRING_SIZE;
-
-    ret = (char *)ft_xmalloc(ret_len);
+    ft_bzero(buf, ft_strlen(opt_list) + 1);
     while (*av)
     {
         if (**av == '-' && ft_isalpha(*(*av + 1)))
         {
-            if (!(ret = get_opt(*av + 1, ret, &ret_len, opt_list)))
-            {
-                free(ret);
+            if (get_opt(*av, opt_list, buf) < 0)
                 return NULL;
-            }
         }
         av++;
     }
-    return ret;
+    return buf;
+}
+
+char	*s_parse_opt(char const *av, char const *opt_list, char *buf)
+{
+    ft_bzero(buf, ft_strlen(opt_list) + 1);
+    while (*av)
+    {
+        if (!ft_strchr(opt_list, *av))
+            return (NULL);
+        if (!ft_strchr(buf, *av))
+			buf[ft_strlen(buf)] = *av;
+		av++;
+    }
+    return (buf);
 }
